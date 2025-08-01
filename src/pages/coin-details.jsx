@@ -31,6 +31,7 @@ const CoinDetailsPage = () => {
     }, [id]);
 
 
+
     return (
         <div className="coin-details-container">
             <Link to='/'> Back to Home</Link>
@@ -73,8 +74,8 @@ const CoinDetailsPage = () => {
                     <CoinChart coinId={coin.id} />
 
                     <div className="coin-details-links">
-                        {coin.links.homepage[0] && (<p>{' '} <a href="{coin.links.homepage[0]}" target='_blank' rel='noopener noreferrer'>Website</a></p>)}
-                        {coin.links.blockchain_site[0] && (<p>{' '} <a href="{coin.links.blockchain_site[0]}" target='_blank' rel='noopener noreferrer'>Blockchain Explorer</a></p>)}
+                        {coin.links.homepage[0] && (<p>{' '} <a href={coin.links.homepage[0]} target='_blank' rel='noopener noreferrer'>Website</a></p>)}
+                        {coin.links.blockchain_site[0] && (<p>{' '} <a href={coin.links.blockchain_site[0]} target='_blank' rel='noopener noreferrer'>Blockchain Explorer</a></p>)}
 
                         {coin.categories.length > 0 && (<p>Categories: {coin.categories.join(', ')}</p>)}
 
