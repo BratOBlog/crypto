@@ -3,17 +3,22 @@ import LimitSelector from '../components/LimitSelector'
 import FilterInput from '../components/FilterInput'
 import SortSelector from '../components/SortSelector'
 import Spinner from '../components/Spinner';
+import { useContext } from 'react';
+import { CoinContext } from '../context/CoinContext';
 
-const HomePage = ({ coins,
-    filter,
-    setFilter,
-    limit,
-    setLimit,
-    error,
-    loading,
-    sortBy,
-    setSortBy
-}) => {
+
+const HomePage = () => {
+    const {
+        coins,
+        filter,
+        setFilter,
+        limit,
+        setLimit,
+        error,
+        loading,
+        sortBy,
+        setSortBy
+    } = useContext(CoinContext);
 
     const filteredCoins = coins.filter((coin) => {
         return coin.name.toLowerCase().includes(filter.toLowerCase()) || coin.symbol.toLowerCase().includes(filter.toLowerCase())
@@ -37,6 +42,7 @@ const HomePage = ({ coins,
                     return 0;
             }
         });
+
     return (<div >
         <h1>Crypto Dash</h1>
         {loading && <Spinner color='white' />}
