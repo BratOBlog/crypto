@@ -24,8 +24,6 @@ export function CoinProvider({ children }) {
                 setLoading(false);
             }
         }
-
-
         fetchCoins();
 
     }, [limit]);
